@@ -1,0 +1,10 @@
+#r1=run('WC', PAR={'beta1':45},DS  =   1e-4, DSMIN=  1e-6, DSMAX= 1e-2)
+
+#HB11=run(r1('HB1'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02,DS='-', SP = ['LP0'],UZSTOP = {'Kp': 20.0})
+#HB12=run(r1('HB1'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02, SP = ['LP0'],UZSTOP = {'Kp': 20.0},NMX=   70000)
+
+
+#r2=run(r1('HB1'),IPS=2,NMX=40000,NPR=5000,ICP=['Kp','PERIOD'],SP =['LP0'],UZSTOP={'PERIOD':120},DSMAX= 1e-3)
+
+HOM1=run(r2('UZ1'),IPS=2,ICP=['Kp','beta1'],NMX=400000,NPR=10000,DSMAX=1e-3,SP =['BP0'], DS='-',UZSTOP={'Kp':1.071}) 
+

@@ -1,0 +1,9 @@
+r1=run('tsodyks',PAR={'I':-50,'omega':20})
+
+SN11 = run(r1('LP1'), ISW=2, ICP=['I', 'omega'],NMX= 10000, NPR=  2000,SP=['LP5', 'GH10', 'BP4'])
+SN12 = run(r1('LP1'), ISW=2, ICP=['I', 'omega'],NMX= 10000, NPR=  2000,SP=['LP5', 'GH10', 'BP4'], DS='-')
+
+SN21 = run(r1('LP4'), ISW=2, ICP=['I', 'omega'],NMX= 10000, NPR=  2000,SP=['LP5', 'GH10', 'BP4'])
+SN22 = run(r1('LP4'), ISW=2, ICP=['I', 'omega'],NMX= 10000, NPR=  2000,SP=['LP5', 'GH10', 'BP4'], DS='-')
+
+

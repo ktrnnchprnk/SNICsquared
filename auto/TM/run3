@@ -1,0 +1,9 @@
+r1=run('tsodyks', U={'v':-49.292893218781465,'m':1}, PAR={'I':-50,'omega':40.2})
+r2=run(r1('HB1'), IPS=2,ICP =  ['I', 'PERIOD'], SP=['LP0', 'BP3'], NTST=160,DS  =   0.001, DSMIN=  0.00001, DSMAX=   0.01, NMX=1000, UZSTOP={'PERIOD':1400})
+
+HC21=run(r2('UZ1'),IPS=2,ICP=['I','omega'],NMX=1500,NPR=100,DSMAX=1e-2,SP=['LP0', 'BP0'])
+HC22=run(r2('UZ1'),IPS=2,ICP=['I','omega'],NMX=1000,NPR=100,DSMAX=1e-2,SP=['LP0', 'BP0'], DS='-')
+
+
+HC21.writeRawFilename('HC21.dat')
+HC22.writeRawFilename('HC22.dat')

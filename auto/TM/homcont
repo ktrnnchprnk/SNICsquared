@@ -1,0 +1,5 @@
+#r1=run('tsodyks', U={'v':-11.553,'m':0.999999916688861}, PAR={'I':-12,'omega':00},NMX=100000,NPR=10000, ICP='omega',SP=['LP4'])
+r2=run(r1('HB1'), IPS=2,ICP =  ['I', 'PERIOD'], SP=['LP0', 'BP0'], NTST=160,DS  =   0.001, DSMIN=  0.00001, DSMAX=   0.01, NMX=10000, UZSTOP={'PERIOD':100})
+
+HC11=run(r2('UZ1'),IPS=2,ICP=['I','omega'],NMX=1000,NPR=500,DSMAX=1e-2,SP=['LP0', 'BP0'])
+HC12=run(r2('UZ1'),IPS=2,ICP=['I','omega'],NMX=14000,NPR=2000,DSMAX=1e-2,SP=['LP0', 'BP0'], DS='-', UZSTOP={'I':23.45944})
