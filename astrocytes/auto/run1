@@ -1,0 +1,33 @@
+r1=run('model',EPSS =0.00001)
+
+
+
+SN11=run(r1('LP1'),ISW=2,ICP=['par1','par2'],UZSTOP = {'par1':[-60, 600],'par2':[-50,150]})
+SN12=run(r1('LP1'),ISW=2,ICP=['par1','par2'], DS='-',SP=['LP0', 'BP0'],UZSTOP = {'par1':[-150, 150],'par2':[-60, 100]})
+
+r1=run('model',EPSS =0.00001, PAR={'par2':18}, U={'E':0.023176 , 'Ipop':0.000259, 'A':0.004461 })
+
+SN21=run(r1('LP3'),ISW=2,ICP=['par1','par2'],UZSTOP = {'par1':[-60, 150],'par2':[-50, 150]})
+SN22=run(r1('LP3'),ISW=2,ICP=['par1','par2'], DS='-',SP=['LP0', 'BP0'],UZSTOP = {'par1':[-50, 150],'par2':[-50,150]})
+
+
+
+
+
+#r1=run('model',PAR={'par2':20} )
+#HB1=run(r1('HB1'),ISW=2,ICP=['par1','par2'],UZSTOP = {'par1':[-50, 50]})
+#HB2=run(r1('HB1'),ISW=2,ICP=['par1','par2'], DS='-',SP=['LP0', 'BP0'],UZSTOP = {'par1':[-150, 150]})
+
+#r1=run('model',PAR={'par2':25} )
+#r2=run(r1('HB1'),IPS=2,ICP=['par1','PERIOD'],SP=['LP0', 'BP0', 'PD0'], UZSTOP={'PERIOD':350}, NTST=200)
+#HC11=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=35000,NPR=1000, DS='-',UZSTOP = {'par1':[-50, 50]})
+#HC12=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=15000,NPR=800,UZSTOP = {'par1':[-50, 50]})
+
+#r1=run('model',PAR={'par2':-4} )
+#r2=run(r1('HB1'),IPS=2,ICP=['par1','PERIOD'],SP=['LP0', 'BP0', 'PD0'], UZSTOP={'PERIOD':550}, NTST=400)
+#HB3=run(r1('HB1'),ISW=2,ICP=['par1','par2'],UZSTOP = {'par1':[-50, 50]})
+#HB4=run(r1('HB1'),ISW=2,ICP=['par1','par2'], DS='-',SP=['LP0', 'BP0'],UZSTOP = {'par1':[-150, 150]})
+
+
+#HC21=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=35000,NPR=1000, DS='-',UZSTOP = {'par1':[-50, 50]})
+#HC22=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=6000,NPR=350,UZSTOP = {'par1':[-50, 50]})

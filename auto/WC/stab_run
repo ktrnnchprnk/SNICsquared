@@ -1,0 +1,10 @@
+# Initial run in one parameter to find HBs and SNs
+r1=run('WC', PAR={'beta1':0.0},DS  =   1e-5, DSMIN=  1e-8, DSMAX= 1e-3,)
+
+#HB11=run(r1('HB1'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02,DS='-', SP = ['LP0'],UZSTOP = {'Kp': 20.0})
+#HB12=run(r1('HB1'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02, SP = ['LP0'],UZSTOP = {'Kp': 30.0})
+
+SN11=run(r1('LP2'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02,DS='-', SP = ['LP0'],UZSTOP = {'beta1': 1.0, 'Kp':30})
+SN12=run(r1('LP2'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02, SP = ['LP0'],UZSTOP = {'beta1': 1.0, 'Kp':30})
+
+

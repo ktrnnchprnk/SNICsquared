@@ -1,0 +1,13 @@
+r1=run('model2',EPSS =0.000001)
+
+
+
+SN11=run(r1('LP1'),ISW=2,ICP=['par1','par2'],UZSTOP = {'par1':[-160, 300],'par2':[-150,350]})
+SN12=run(r1('LP1'),ISW=2,ICP=['par1','par2'], DS='-',SP=['LP0', 'BP0'],UZSTOP = {'par1':[-150, 350],'par2':[-160, 300]})
+
+r1=run('model2',EPSS =0.000001, PAR={'par2':16})#, U={'E':0.023257 , 'Ipop':0.000205, 'A':0.001913 }
+
+SN21=run(r1('LP4'),ISW=2,ICP=['par1','par2'],UZSTOP = {'par1':[-60, 150],'par2':[-50, 150]})
+SN22=run(r1('LP4'),ISW=2,ICP=['par1','par2'], DS='-',SP=['LP0', 'BP0'],UZSTOP = {'par1':[-50, 150],'par2':[-50,150]})
+
+

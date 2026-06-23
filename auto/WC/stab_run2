@@ -1,0 +1,8 @@
+r1=run('WC', PAR={'beta1':14},DS  =   1e-4, DSMIN=  1e-6, DSMAX= 1e-2)
+SN21=run(r1('LP4'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02,DS='-', SP = ['LP0'],UZSTOP = {'beta1': 1.0, 'Kp':30})
+SN22=run(r1('LP4'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02, SP = ['LP0'],UZSTOP = {'beta1': 1.0, 'Kp':30})
+r1=run('WC', PAR={'beta1':12},DS  =   1e-4, DSMIN=  1e-6, DSMAX= 1e-2)
+SN11=run(r1('LP3'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02,DS='-', SP = ['LP0'],UZSTOP = {'beta1': 1.0, 'Kp':30})
+SN12=run(r1('LP3'),ISW=2,ICP=['Kp','beta1'], EPSL = 1e-02, SP = ['LP0'],UZSTOP = {'beta1': 1.0, 'Kp':30})
+
+

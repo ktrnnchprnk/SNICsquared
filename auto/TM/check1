@@ -1,0 +1,8 @@
+#r1=run('tsodyks',PAR={'I':-50,'omega':15})
+
+HB1 = run(r1('HB1'), ISW=2, ICP=['I', 'omega'],NMX= 1000000, NPR=  200000,SP=['LP5', 'GH10', 'BP4'], UZSTOP={'I':-150, 'omega':120})
+
+HB2 = run(r1('HB1'), ISW=2, ICP=['I', 'omega'],NMX= 100000, NPR=  20000,SP=['LP5', 'GH10', 'BP4'],DS='-',UZSTOP={'I':-150, 'omega':120})
+
+GH1 = run(HB2('GH1'), IPS=1, ISW=2, ICP=['I','omega'], NPR=500)
+

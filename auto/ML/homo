@@ -1,0 +1,8 @@
+r1=run('ML',U={1: -109.9663 ,2: 0}, PAR={'I':-100, 'gK':27+})
+
+
+r2=run(r1('HB1'),IPS=2,NMX=17300,NPR=10000,ICP=['I','PERIOD'],SP =['LP0', 'BP0'],NTST=250, UZSTOP={'PERIOD':100})
+
+HC11=run(r2('UZ1'),IPS=2,ICP=['I','gK'],NMX=180000,NPR=10000,DSMAX=1e-2)
+
+HC12=run(r2('UZ1'),IPS=2,ICP=['I','gK'],NMX=15000,NPR=5000,DSMAX=1e-2, DS='-')

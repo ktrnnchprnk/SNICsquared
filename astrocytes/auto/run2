@@ -1,0 +1,14 @@
+r1=run('model',EPSS =0.00001, PAR={'par2':3.}, U={'E':0.023280, 'Ipop':0.000189, 'A':0.0044903})
+
+
+#r1=run(r1('UZ1'),ICP=['par2'], SP=['HB1'])
+
+r2=run(r1('HB1'),IPS=2,ICP=['par1','PERIOD'],SP=['LP0', 'BP0', 'PD0'], UZSTOP={'PERIOD':1050}, NTST=500)
+
+
+HB3=run(r1('HB1'),ISW=2,ICP=['par1','par2'],UZSTOP = {'par1':[-50, 50]})
+HB4=run(r1('HB1'),ISW=2,ICP=['par1','par2'], DS='-',SP=['LP0', 'BP0'],UZSTOP = {'par1':[-150, 150]})
+
+
+HC21=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=1000,NPR=400, DS='-',UZSTOP = {'par2':[-150, 150]})
+HC22=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=20000,NPR=400,UZSTOP = {'par2':[-150, 150]},DS  = 5e-4)

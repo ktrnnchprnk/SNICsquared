@@ -1,0 +1,2 @@
+r1=run('model2',EPSS =0.00001, ICP =  ['Kp', 'STA'],UZSTOP = {'Kp':[-10, 10]}, PAR={'Kp':0,'par2':0}, U={'E':0.0, 'Ipop':0.0, 'A':0.0})
+#r2=run(r1('HB1'),IPS=2,ICP=['Kp','PERIOD'])

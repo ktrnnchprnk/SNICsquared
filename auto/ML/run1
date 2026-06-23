@@ -1,0 +1,36 @@
+# Continuation in V1 - find HB and first set SN
+#r1=run('ML',ICP =  ['V1', 'STA'],PAR={'gK':12, 'V1':-120},  U={1:-12.6856,2:0.8899}, NMX=300000, NPR=  30000, UZSTOP={'V1':120})
+
+# find HB in two parameters (V1 and Vca)
+#HB1=run(r1('HB1'),ISW=2,ICP=['Vca','V1'], EPSL = 1e-02,DS='-',UZSTOP = {'I': 300.0}, NMX=   300000, NPR=  30000,SP=['LP0', 'BP0'])
+#HB2=run(r1('HB1'),ISW=2,ICP=['Vca','V1'], EPSL = 1e-02,UZSTOP = {'gK': 25.0}, NMX=   1000000, NPR=  10000,SP=['LP0', 'BP0'], DSMAX=1e-2, DS=1e-4, DSMIN=1e-6)
+
+# find first set of SN in two parameters
+#SN1=run(r1('LP1'),ISW=2,ICP=['Vca','V1'], EPSL = 1e-02,DS='-', NMX=   100000, NPR=  10000,SP=['LP0', 'BP0'],UZSTOP = {'Vca': [-100, 150]})
+#SN2=run(r1('LP1'),ISW=2,ICP=['Vca','V1'], EPSL = 1e-02, NMX=   300000, NPR=  30000, SP=['LP0', 'BP0'],UZSTOP = {'Vca': [-100, 150]})
+
+# find second set of SN
+#r1=run('ML',ICP =  ['V1', 'STA'],PAR={'gK':12, 'V1':-120},  U={1:-12.6856,2:0.8899}, NMX=300000, NPR=  30000, UZSTOP={'V1':-15})
+#r2=run(r1, IRS=3,ISW=1,ICP=['Vca','STA'], UZSTOP={'Vca':200})
+
+#SN3=run(r2('LP1'),ISW=2,ICP=['Vca','V1'], EPSL = 1e-02,UZSTOP = {'Vca': [-100, 150]}, NMX=   60000, NPR=  6000,SP=['LP0', 'BP0'])
+#SN4=run(r2('LP1'),ISW=2,ICP=['Vca','V1'], EPSL = 1e-02,UZSTOP = {'Vca': [-100, 150]}, NMX=   60000, NPR=  6000,SP=['LP0', 'BP0'], DS='-')
+
+# SEARCH OF HOMOCLINICS
+
+#r1=run('ML',ICP =  ['V1', 'STA'],PAR={'gK':12, 'V1':-120},  U={1:-12.6856,2:0.8899}, NMX=300000, NPR=  300000, UZSTOP={'V1':0})
+
+#r2=run(r1('HB1'),IPS=2,NMX=17300,NPR=10000,ICP=['V1','PERIOD'],SP =['LP0', 'BP0'],NTST=250, UZSTOP={'PERIOD':500})
+#HC1=run(r2('UZ1'),IPS=2,ICP=['Vca','V1'],NMX=20000,NPR=2000,DSMAX=1e-2)
+#HC2=run(r2('UZ1'),IPS=2,ICP=['Vca','V1'],NMX=20000,NPR=2000,DSMAX=1e-2, DS='-',UZSTOP={'V1':-13.2})  
+
+# SEARCH number 2
+
+#r1=run('ML',ICP =  ['V1', 'STA'],PAR={'gK':12, 'V1':-30, 'Vca':80},  U={1:-3.1464,2:0.9920}, NMX=20000,NPR=  100000)
+#r2=run(r1('HB1'),IPS=2,NMX=7300,NPR=10000,ICP=['V1','PERIOD'],SP =['LP0'],NTST=250, UZSTOP={'V1':-15})
+
+#r3=run(r2('UZ'),ICP=['Vca','PERIOD'],NMX=23000,NPR=10000000, NTST=180,UZR={-11:1000})
+
+r3a=run(r3('UZ'),ICP=['Vca','PERIOD'],NMX=23000,NPR=10000000, NTST=350,UZR={-11:3000})
+
+HC3=run(r3a('UZ1'),IPS=2,ICP=['Vca','V1'],NMX=5000,NPR=1000,DSMAX=5e-2, SP=['BP0'])

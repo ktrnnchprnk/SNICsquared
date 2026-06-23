@@ -1,0 +1,21 @@
+r1=run('tsodyks', U={'v':-49.552772471075976,'m':0.999999916688861}, PAR={'I':-50,'omega':10})
+r2=run(r1('HB1'), IPS=2,ICP =  ['I', 'PERIOD'], SP=['LP0', 'BP0'], NTST=160,DS  =   0.001, DSMIN=  0.00001, DSMAX=   0.01, NMX=10000, UZSTOP={'PERIOD':100})
+
+HC11=run(r2('UZ1'),IPS=2,ICP=['I','omega'],NMX=30000,NPR=1000,DSMAX=1e-2,SP=['LP0', 'BP0'])
+HC12=run(r2('UZ1'),IPS=2,ICP=['I','omega'],NMX=10000,NPR=1000,DSMAX=1e-2,SP=['LP0', 'BP0'], DS='-', UZSTOP={'I':-9.45944})
+
+HB1 = run(r1('HB1'), ISW=2, ICP=['I', 'omega'],NMX= 100000, NPR=  20000,SP=['LP5', 'GH10', 'BP4'], UZSTOP={'I':-150, 'omega':120})
+
+HB2 = run(r1('HB1'), ISW=2, ICP=['I', 'omega'],NMX= 100000, NPR=  20000,SP=['LP5', 'GH10', 'BP4'],DS='-',UZSTOP={'I':-150, 'omega':120})
+
+
+HC11.writeRawFilename('HC11.dat')
+HC12.writeRawFilename('HC12.dat')
+HB1.writeRawFilename('HB1.dat')
+HB2.writeRawFilename('HB2.dat')
+
+#HC11(13).writeRawFilename('hom.dat')
+#HC11(14).writeRawFilename('het.dat')
+#HC11(25).writeRawFilename('het2.dat')
+#HC11(32).writeRawFilename('het3.dat')
+#HC11(36).writeRawFilename('hom2.dat')

@@ -1,0 +1,7 @@
+r1=run('model',PAR={'par2':24} )
+HB1=run(r1('HB1'),ISW=2,ICP=['par1','par2'],UZSTOP = {'par1':[-50, 50]})
+HB2=run(r1('HB1'),ISW=2,ICP=['par1','par2'], DS='-',SP=['LP0', 'BP0'],UZSTOP = {'par1':[-150, 150]})
+
+r2=run(r1('HB1'),IPS=2,ICP=['par1','PERIOD'],SP=['LP0', 'BP0', 'PD0'], UZSTOP={'PERIOD':2000}, NTST=500)
+#HC11=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=35000,NPR=1000, DS='-',UZSTOP = {'par1':[-50, 50]})
+HC12=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=25000,NPR=5000,UZSTOP = {'par1':[-50, 50]})

@@ -1,0 +1,12 @@
+
+
+#HB1.writeRawFilename('HB1.dat')
+#HB2.writeRawFilename('HB2.dat')
+
+SN11.writeRawFilename('SN11.dat')
+SN12.writeRawFilename('SN12.dat')
+SN21.writeRawFilename('SN21.dat')
+SN22.writeRawFilename('SN22.dat')
+
+#HC11.writeRawFilename('HC11.dat')
+#HC12.writeRawFilename('HC12.dat')

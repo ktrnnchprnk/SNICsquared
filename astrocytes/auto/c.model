@@ -1,0 +1,10 @@
+parnames = {1: 'par1', 2: 'par2',3: 'STA'}
+unames = {1: 'E', 2: 'Ipop', 3:'A'}
+NDIM=   3, IPS =   1, IRS =   0, ILP =   1
+ICP =  ['par1', 'STA']
+NTST=  50, NCOL=   6, IAD =   3, ISP =   2, ISW = 1, IPLT= 0, NBC= 0, NINT= 0
+NMX=   200000, NPR=  20000, MXBF=  10, IID =   2, ITMX= 9, ITNW= 7, NWTN= 3, JAC= 0
+EPSL= 1e-08, EPSU = 1e-08, EPSS =0.0001
+DS  =   1e-4, DSMIN=  1e-7, DSMAX= 1e-2, IADS=1
+NPAR = 40, THL =  {'PERIOD': 0.0}, THU =  {}
+UZSTOP = {'par1':100}

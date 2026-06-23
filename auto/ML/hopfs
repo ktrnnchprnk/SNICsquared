@@ -1,0 +1,4 @@
+r1=run('ML',U={1:-73.9542 ,2: 0}, PAR={'I':-30, 'gK':40})
+
+HB1=run(r1('HB1'),ISW=2,ICP=['I','gK'], EPSL = 1e-02,DS='-',UZSTOP = {'I': 300.0}, NMX=   300000, NPR=  30000,SP=['LP0', 'BP0'])
+HB2=run(r1('HB1'),ISW=2,ICP=['I','gK'], EPSL = 1e-02,UZSTOP = {'gK': 25.0}, NMX=   1000000, NPR=  10000,SP=['LP0', 'BP0'], DSMAX=1e-2, DS=1e-4, DSMIN=1e-6)

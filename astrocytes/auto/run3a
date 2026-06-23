@@ -1,0 +1,13 @@
+r1=run('model2',EPSS =0.00001, PAR={'par2':2}, U={'E':0.012450, 'Ipop':0.000091, 'A':0.007301})
+
+HB1=run(r1('HB1'),ISW=2,ICP=['par1','par2'],UZSTOP = {'par1':[-50, 50]})
+HB2=run(r1('HB1'),ISW=2,ICP=['par1','par2'], DS='-',SP=['LP0', 'BP0'],UZSTOP = {'par1':[-150, 150]})
+
+
+r2=run(r1('HB1'),IPS=2,ICP=['par1','PERIOD'],SP=['LP0', 'BP0', 'PD0'], UZSTOP={'PERIOD':2500}, NTST=600)
+
+
+#HC11=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=6000,NPR=1000, DS='-',UZSTOP = {'par2':[-150, 150]})
+HC12=run(r2('UZ1'),IPS=2,ICP=['par1','par2'],NMX=40000,NPR=4000,UZSTOP = {'par2':[-150, 150]},DS  = 5e-4)
+
+plot HC12

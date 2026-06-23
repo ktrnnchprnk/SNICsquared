@@ -1,0 +1,9 @@
+parnames = {1: 'A', 2: 'c4'}
+unames = {1: 'xp', 2: 'xe', 3: 'xi',4: 'yp', 5:'ye', 6:'yi'}
+NDIM=   6, IPS =   1, IRS =   0, ILP =   1
+ICP =  ['A']
+NTST=  50, NCOL=   6, IAD =   3, ISP =   2, ISW = 1, IPLT= 0, NBC= 0, NINT= 0
+NMX=   25000, NPR=  2500, MXBF=  10, IID =   2, ITMX= 8, ITNW= 7, NWTN= 3, JAC= 0
+EPSL= 1e-07, EPSU = 1e-07, EPSS =0.0001
+DS  =   -1e-6, DSMIN=  1e-8, DSMAX= 1e-2, IADS=1
+NPAR = 40, THL =  {'PERIOD': 0.0}, THU =  {}
